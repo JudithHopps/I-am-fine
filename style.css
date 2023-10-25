@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|ZCOOL+QingKe+HuangYou");
 
-
 /* ==== 변수 설정 ===== */
 
 * {
@@ -9,9 +8,12 @@
   color: #000;
   font-family: "ZCOOL QingKe HuangYou", Courier;
   box-sizing: border-box;
-  --animationtime  : 2s;
+  --animationtime: 2s;
 }
 
+:root {
+  --height: 0%;
+}
 .fn-font {
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -93,296 +95,164 @@ header li > a :hover {
 /* ==== body ===== */
 /* 주디 gif */
 .judith {
-  height: 17em;
+  height: 15em;
   margin: 5%;
   background-image: url("asset/judith.gif");
 }
 .introduce {
   display: flex;
-  margin: 3%;
+  margin: 3rem;
 }
 #i {
-  margin-right: 3%;
+  margin-right: 3rem;
 }
 hr {
   margin: 2%;
 }
-.skill{
+.graphContainer {
   text-align: center;
 }
 
-
-
-/* 기술스택 - 애니메이션 그래프 */
-.graph{
-  background-color:#ccc;
+.graphContainer p {
+  margin: 1em 0em;
+  color: #959191;
+}
+/* 애니메이션 그래프 */
+.graph {
+  background-color: #ccc;
   height: 100vh;
   border-radius: 40px;
-  margin:25px;
-  display:block;
+  margin: 25px;
+  display: block;
 }
-@keyframes stack10{
-  0%{ height: 0; opacity:0;}
-  100%{ height: 10%; opacity:1;}
-}
-@keyframes stack15{
-  0%{ height: 0; opacity:0;}
-  100%{ height: 15%; opacity:1;}
-}
-@keyframes stack50{
-  0%{ height: 0; opacity:0;}
-  100%{ height: 50%; opacity:1;}
-}
-@keyframes stack60{
-  0%{ height: 0; opacity:0;}
-  100%{ height: 60%; opacity:1;}
-}
-@keyframes stack75{
-  0%{ height: 0; opacity:0;}
-  100%{ height: 75%; opacity:1;}
-}
-@keyframes stack80{
-  0%{ height: 0; opacity:0;}
-  100%{ height: 80%; opacity:1;}
+@keyframes stack {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: var(--height);
+    opacity: 1;
+  }
 }
 
-
-section{
-  display:flex;  
-  justify-content:center;
+section {
+  display: flex;
+  justify-content: center;
   height: 500px;
-  transform:rotate(180deg);
-  
 }
-
+.graph h3 {
+  transform: rotate(180deg);
+}
 
 .graph {
-  height:400px;
+  height: 400px;
+  transform: rotate(180deg);
 }
 
-.graph span{
-  display:flex;
-  height:40px;
-  line-height:40px;
-  text-align:right;
+.graph span {
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+  text-align: right;
   border-radius: 40px;
   padding: 0 10px;
   box-sizing: border-box;
-  color:white;
-  transform:rotate(180deg);  
+  color: white;
+  transform: rotate(180deg);
 }
-.graph h3{
-  transform:rotate(180deg);  
 
-}
-.graph.stack1 span{
-  background-color:rgba(0, 0, 0, 0.674);
-  height:10%;
-  animation:stack10 2s 1;
-  animation-delay: var(--animationtime) ;
-}
-.graph.stack2 span{
-  background-color:aquamarine;
-  height:15%;
-  animation:stack15 2s 1;
+.graph.stack span {
+  height: var(--height);
+  animation: stack 2s 1;
   animation-delay: var(--animationtime);
 }
-.graph.stack3 span{
-  background-color:rgb(120, 204, 225);
-  height:15%;
-  animation:stack15 2s 1;
-  animation-delay: var(--animationtime);
-}
-.graph.stack4 span{
-  background-color:rgb(248, 232, 10);
-  height:60%;
-  animation:stack60 2s 1;
-  animation-delay: var(--animationtime);
-}
-.graph.stack5 span{
-  background-color:black;
-  height:50%;
-  animation:stack50 2s 1;
-  animation-delay: var(--animationtime);
-}
-.graph.stack6 span{
-  background-color:red;
-  height:50%;
-  animation:stack50 2s 1;
-  animation-delay: var(--animationtime);
-}
-.graph.stack7 span{
-  background-color:rgb(131, 152, 229);
-  height:80%;
-  animation:stack80 2s 1;
-  animation-delay: var(--animationtime);
-}
-.graph.stack8 span{
-  background-color:orange;
-  height:80%;
-  animation:stack80 2s 1;
-  animation-delay: var(--animationtime);
-}
-.graph.stack9 span{
-  background-color:skyblue;
-  height:50%;
-  animation:stack50 2s 1;
-  animation-delay: var(--animationtime);
-}
-.graph.stack10 span{
-  background-color:rgb(114, 248, 114);
-  height:60%;
-  animation:stack60 2s 1;
-  animation-delay: var(--animationtime);
-}
-.graph.stack11 span{
-  background-color:yellow;
-  height:75%;
-  animation:stack75 2s 1;
-  animation-delay: var(--animationtime);
-}
-/* skill end */
 
-
-/* 프로젝트 */
-
-.portfolio{
+.graphEditContainer {
   text-align: center;
-  /* margin-left:2%;
-  margin-right:2%; */
-  margin: 2%;
-  background-color: aliceblue;
-
+  display: block;
+}
+#addDataSection {
+  font-size: medium;
+  display: inline-flex;
+  width: 200px;
+  height: 30px;
+  justify-content: space-around;
+  margin: 2em;
+}
+#addDataSection label {
+  margin-top: 6px;
 }
 
+button {
+  width: 60px;
+  height: 30px;
+  background-color: aquamarine;
+  opacity: 60%;
+}
+button:hover {
+  opacity: 100%;
+}
 
-@import url(https://fonts.googleapis.com/css?family=Raleway);
-.snip1584 {
+textarea {
+  padding: 5px;
+  margin: 0px 10px;
+}
+#editDetailDataSection {
+  display: inline-flex;
+  flex-direction: column;
+  width: 580px;
+  margin: 2em;
+  justify-content: center;
   position: relative;
-  display: inline-block;
-  overflow: hidden;
-  margin: 10px;
-  min-width: 200px;
-  max-width: 300px;
-  /* max-height: 300px; */
-  overflow: hidden;
-  width: 100%;
-  color: #ffffff;
-  font-size: 16px;
-  text-align: left;
-  justify-content: space-between;
-  margin-top:2%;
-  /* margin-right: 4%; */
 }
-.snip1584 * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
+#editDetailDataSection textarea {
+  width: 500px;
+  height: 500px;
 }
-.snip1584:before {
+#editDetailDataSection button {
   position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  top: 100%;
-  content: '';
-  background-color: rgba(51, 51, 51, 0.9);
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  -webkit-transition-delay: 0.25s;
-  transition-delay: 0.25s;
-}
-.snip1584 img {
-  vertical-align: top;
-  max-width: 100%;
-  backface-visibility: hidden;
-}
-.snip1584 figcaption {
-  position: absolute;
-  top: 0;
   bottom: 0;
-  left: 0;
   right: 0;
-  z-index: 1;
-  align-items: center;
+}
+#description {
   display: flex;
   flex-direction: column;
+  text-align: start;
+  width: 600px;
+  padding-left: 100px;
+  margin: 30px 0px;
+  color: #959191;
+}
+#editDataSection {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: 580px;
   justify-content: center;
 }
-.snip1584 h3,
-.snip1584 h5,
-.snip1584 p
- {
-  margin: 0;
-  opacity: 0;
-  letter-spacing: 1px;
-  color:whitesmoke;
-  text-align: center;
+#editDataSection table button {
+  color: red;
+  background-color: white;
+  border: white;
 }
-.snip1584 p{
-  /* padding-left: 10px;
-  padding-right: 10px; */
-  padding: 10px;
+#editDataSection table td:nth-child(2) {
+  width: 80%;
 }
-.snip1584 h3 {
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
-  text-transform: uppercase;
-  font-weight: 400;
-  -webkit-transition-delay: 0.05s;
-  transition-delay: 0.05s;
-  margin-bottom: 5px;
-}
-.snip1584 h5 {
-  font-weight: normal;
-  background-color: #ae895d;
-  padding: 3px 10px;
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
-  -webkit-transition-delay: 0s;
-  transition-delay: 0s;
-}
-.snip1584 a {
+#applyBtn {
   position: absolute;
-  top: 0;
   bottom: 0;
-  left: 0;
   right: 0;
-  z-index: 1;
 }
-.snip1584:hover:before,
-.snip1584.hover:before {
-  top: 10px;
-  -webkit-transition-delay: 0s;
-  transition-delay: 0s;
+#resetBtn {
+  position: absolute;
+  bottom: 0;
+  right: 65px;
+  background-color: lightskyblue;
 }
-.snip1584:hover h3,
-.snip1584.hover h3,
-.snip1584:hover h5,
-.snip1584.hover h5 ,
-.snip1584:hover p,
-.snip1584.hover p{
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-  opacity: 1;
-}
-.snip1584:hover h3,
-.snip1584.hover h3 ,
-.snip1584:hover p,
-.snip1584.hover p {
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
-}
-.snip1584:hover h5,
-.snip1584.hover h5 {
-  -webkit-transition-delay: 0.2s;
-  transition-delay: 0.2s;
-}
-
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 #toTop {
-  position: fixed;  
+  position: fixed;
   bottom: 80px;
   margin-left: 93%;
   display: none;
@@ -390,11 +260,11 @@ section{
 }
 
 /* ===== 푸터 ===== */
-footer{
+footer {
   text-align: center;
   opacity: 0.4;
   margin-bottom: 10px;
 }
-footer hr{
+footer hr {
   margin-bottom: 0;
 }

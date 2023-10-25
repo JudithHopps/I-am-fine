@@ -2,7 +2,10 @@ $(function () {
   $(window).scroll(function () {
     if ($(this).scrollTop() > 200) {
       $("#toTop").fadeIn();
-      $("#toTop").css("left", $("#sidebar").offset().left);
+      var sidebar = $("#sidebar");
+      if (sidebar.length > 0) {
+        $("#toTop").css("left", sidebar.offset().left);
+      }
     } else {
       $("#toTop").fadeOut();
     }
